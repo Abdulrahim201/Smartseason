@@ -1,0 +1,29 @@
+.navbar {
+  background: #fff; border-bottom: 1px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 60px; position: sticky; top: 0; z-index: 100;
+  box-shadow: var(--shadow);
+}
+.navbar-brand a {
+  font-size: 18px; font-weight: 700; color: var(--primary);
+  text-decoration: none; display: flex; align-items: center; gap: 8px;
+}
+.navbar-links { display: flex; gap: 4px; }
+.navbar-links a {
+  padding: 6px 12px; border-radius: var(--radius); font-size: 14px;
+  font-weight: 500; color: var(--gray-600); text-decoration: none; transition: all 0.15s;
+}
+.navbar-links a:hover { background: var(--gray-100); color: var(--gray-800); text-decoration: none; }
+.navbar-user { display: flex; align-items: center; gap: 12px; }
+.username { font-size: 14px; font-weight: 500; color: var(--gray-800); }
+.role-badge {
+  font-size: 11px; font-weight: 600; padding: 3px 8px;
+  border-radius: 99px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.role-admin { background: #ede9fe; color: #6d28d9; }
+.role-agent { background: var(--primary-light); color: var(--primary-dark); }
+.logout-btn {
+  padding: 6px 12px; border-radius: var(--radius); border: 1px solid var(--gray-200);
+  background: #fff; font-size: 13px; cursor: pointer; color: var(--gray-600); transition: all 0.15s;
+}
+.logout-btn:hover { background: var(--gray-100); color: var(--danger); }

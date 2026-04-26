@@ -1,0 +1,29 @@
+.field-list-page {}
+
+.filter-tabs { display: flex; gap: 4px; margin-bottom: 20px; }
+.filter-tab {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: var(--radius); border: 1px solid var(--gray-200);
+  background: #fff; font-size: 13px; font-weight: 500; cursor: pointer;
+  color: var(--gray-600); transition: all 0.15s;
+}
+.filter-tab:hover { background: var(--gray-100); }
+.filter-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.filter-count {
+  background: rgba(255,255,255,0.25); padding: 1px 6px;
+  border-radius: 99px; font-size: 11px; font-weight: 700;
+}
+.filter-tab:not(.active) .filter-count { background: var(--gray-100); color: var(--gray-600); }
+
+.fields-table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--gray-200); }
+.fields-table { width: 100%; border-collapse: collapse; background: #fff; }
+.fields-table th {
+  padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 600;
+  color: var(--gray-600); background: var(--gray-50); border-bottom: 1px solid var(--gray-200);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.fields-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--gray-100); }
+.fields-table tr:last-child td { border-bottom: none; }
+.fields-table tr:hover td { background: var(--gray-50); }
+.field-name-link { font-weight: 600; color: var(--primary); }
+.field-name-link:hover { text-decoration: underline; }

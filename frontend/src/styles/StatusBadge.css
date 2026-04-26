@@ -1,0 +1,11 @@
+.badge {
+  display: inline-flex; align-items: center; padding: 3px 10px;
+  border-radius: 99px; font-size: 12px; font-weight: 600; white-space: nowrap;
+}
+.badge-status.badge-active { background: #dcfce7; color: #15803d; }
+.badge-status.badge-at_risk { background: #fef9c3; color: #a16207; }
+.badge-status.badge-completed { background: var(--gray-100); color: var(--gray-600); }
+.badge-stage.badge-stage-planted { background: #dbeafe; color: #1d4ed8; }
+.badge-stage.badge-stage-growing { background: #dcfce7; color: #15803d; }
+.badge-stage.badge-stage-ready { background: #fef9c3; color: #a16207; }
+.badge-stage.badge-stage-harvested { background: var(--gray-100); color: var(--gray-600); }

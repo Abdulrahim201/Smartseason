@@ -1,0 +1,42 @@
+.dashboard {}
+
+.stats-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px; margin-bottom: 8px;
+}
+.stat-card {
+  background: #fff; border-radius: var(--radius); padding: 20px;
+  border: 1px solid var(--gray-200); border-top: 4px solid;
+  box-shadow: var(--shadow);
+}
+.stat-value { font-size: 32px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+.stat-label { font-size: 13px; font-weight: 600; color: var(--gray-600); margin-bottom: 4px; }
+.stat-sub { font-size: 11px; color: var(--gray-400); }
+
+.stage-bars { display: flex; flex-direction: column; gap: 12px; }
+.stage-bar-row { display: flex; align-items: center; gap: 12px; }
+.stage-bar-track {
+  flex: 1; height: 10px; background: var(--gray-100);
+  border-radius: 99px; overflow: hidden;
+}
+.stage-bar-fill {
+  height: 100%; border-radius: 99px; min-width: 4px; transition: width 0.4s;
+}
+.stage-bar-fill[data-stage="planted"] { background: #3b82f6; }
+.stage-bar-fill[data-stage="growing"] { background: #22c55e; }
+.stage-bar-fill[data-stage="ready"] { background: #f59e0b; }
+.stage-bar-fill[data-stage="harvested"] { background: #94a3b8; }
+.stage-count { font-size: 13px; font-weight: 600; color: var(--gray-600); min-width: 20px; text-align: right; }
+
+.updates-list { display: flex; flex-direction: column; gap: 12px; }
+.update-item {
+  background: var(--gray-50); border-radius: var(--radius);
+  padding: 14px 16px; border: 1px solid var(--gray-200);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.update-meta { display: flex; align-items: center; gap: 8px; }
+.update-field-link { font-weight: 600; font-size: 14px; color: var(--primary); }
+.update-field-link:hover { text-decoration: underline; }
+.update-agent { font-size: 13px; color: var(--gray-600); }
+.update-notes { font-size: 13px; color: var(--gray-600); margin: 0; }
+.update-time { font-size: 11px; color: var(--gray-400); }
