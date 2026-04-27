@@ -17,9 +17,13 @@ function Register() {
     setLoading(true);
     try {
       await api.post("/api/user/register/", { username, password, role });
+      console.log("Register response:", res.status, res.data);
+    if (res.status === 201) {
       navigate("/login");
+    }
     } catch (err) {
-      setError(err.response?.data?.username?.[0] || "Registration failed. Try a different username.");
+      console.log("Register error:", err.response?.status, err.response?.data);
+    setError(JSON.stringify(err.response?.data) || "Registration failed.");
     } finally {
       setLoading(false);
     }
