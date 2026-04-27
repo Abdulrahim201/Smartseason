@@ -83,7 +83,7 @@ The logic assumes a typical growing season is under 90 days. Fields going stale 
 ### API Design
 - `GET /api/fields/` — filtered by role (all for admin, assigned-only for agents)
 - `GET /api/dashboard/` — role-aware summary data
-- `POST /api/fields/<id>/updates/create/` — also updates `Field.current_stage` automically
+- `POST /api/fields/<id>/updates/create/` — also updates `Field.current_stage` atomically
 - `GET /api/me/` — returns current user + role (used by frontend for role-based rendering)
 
 ### Assumptions
