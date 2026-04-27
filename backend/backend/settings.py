@@ -11,7 +11,8 @@ SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-smartseason-dev-key-change
 
 DEBUG = os.getenv("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = ["localhost", "https://smartseason-q4jo.onrender.com"]
+#ALLOWED_HOSTS = ["localhost", "https://smartseason-q4jo.onrender.com"]
+ALLOWED_HOSTS = ["localhost", "smartseason-q4jo.onrender.com"]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
