@@ -108,8 +108,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://your-frontend-url.up.railway.app",  # added this for deployment
+    "https://smartseason-1-r0qs.onrender.com",
 ]
-CORS_ALLOW_ALL_ORIGINS = False  
+CORS_ALLOW_ALL_ORIGINS = False
 
 
