@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Profile, Field, FieldUpdate
+from .models import Profile
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -14,9 +14,12 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         role = validated_data.pop('role', 'agent')
         user = User.objects.create_user(**validated_data)
-        Profile.objects.get_or_create(user=user, role=role)
+        # Use update_or_create to handle any existing profile
+        Profile.objects.update_or_create(
+            user=user,
+            defaults={'role': role}
+        )
         return user
-
 
 class UserBasicSerializer(serializers.ModelSerializer):
     role = serializers.SerializerMethodField()
