@@ -106,10 +106,11 @@ STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"  # added this line
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "https://smartseason-1-r0qs.onrender.com",
-]
-CORS_ALLOW_ALL_ORIGINS = False
+#CORS_ALLOWED_ORIGINS = [
+#    "http://localhost:5173",
+ #   "https://smartseason-1-r0qs.onrender.com",
+#]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 
