@@ -11,23 +11,28 @@ function Register() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
-    try {
-      await api.post("/api/user/register/", { username, password, role });
-      console.log("Register response:", res.status, res.data);
-    if (res.status === 201) {
-      navigate("/login");
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setError("");
+  setLoading(true);
+  try {
+    await api.post("/api/user/register/", { username, password, role });
+    navigate("/login");
+  } catch (err) {
+    const data = err.response?.data;
+    if (data?.username) {
+      setError(data.username[0]);
+    } else if (data?.password) {
+      setError(data.password[0]);
+    } else if (data?.message) {
+      setError(data.message);
+    } else {
+      setError("Registration failed. Please try again.");
     }
-    } catch (err) {
-      console.log("Register error:", err.response?.status, err.response?.data);
-    setError(JSON.stringify(err.response?.data) || "Registration failed.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="auth-page">
