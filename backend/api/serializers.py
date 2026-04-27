@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Profile
+from .models import Profile, Field, FieldUpdate
 
 
 class UserSerializer(serializers.ModelSerializer):
