@@ -14,7 +14,7 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         role = validated_data.pop('role', 'agent')
         user = User.objects.create_user(**validated_data)
-        Profile.objects.create(user=user, role=role)
+        Profile.objects.get_or_create(user=user, role=role)
         return user
 
 
