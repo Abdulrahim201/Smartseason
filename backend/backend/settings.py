@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-smartseason-dev-key-change-in-production")
 
-DEBUG = os.getenv("DEBUG", "True") == "True"
+DEBUG = os.getenv("DEBUG", "True") == "FALSE"
 
 #ALLOWED_HOSTS = ["localhost", "https://smartseason-q4jo.onrender.com"]
 ALLOWED_HOSTS = ["localhost", "smartseason-q4jo.onrender.com"]
