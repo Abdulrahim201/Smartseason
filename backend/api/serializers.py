@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Profile, Field, FieldUpdate
+from datetime import date
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -54,6 +55,11 @@ class FieldSerializer(serializers.ModelSerializer):
     )
     updates = FieldUpdateSerializer(many=True, read_only=True)
     last_update = serializers.SerializerMethodField()
+    
+    def validate_planting_date(self, value):
+        if value > date.today():
+            raise serializers.ValidationError("Planting date cannot be in the future.")
+        return value
 
     class Meta:
         model = Field

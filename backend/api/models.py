@@ -50,6 +50,10 @@ class Field(models.Model):
         if self.current_stage == 'harvested':
             return 'completed'
 
+        # Guard against future planting dates
+        if days_since_planting < 0:
+            return 'active'
+
         last_update = self.updates.order_by('-created_at').first()
         if last_update:
             days_since_update = (timezone.now() - last_update.created_at).days
