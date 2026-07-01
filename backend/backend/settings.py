@@ -11,8 +11,11 @@ SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-smartseason-dev-key-change
 
 DEBUG = os.getenv("DEBUG", "True") == "FALSE"
 
-#ALLOWED_HOSTS = ["localhost", "https://smartseason-q4jo.onrender.com"]
-ALLOWED_HOSTS = ["localhost", "smartseason-q4jo.onrender.com"]
+
+ALLOWED_HOSTS = [ "localhost",
+                 "smartseason-q4jo.onrender.com",
+                  "abdulrahim201.pythonanywhere.com",
+                 ]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -56,7 +59,7 @@ ROOT_URLCONF = "backend.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+         "DIRS": [BASE_DIR / "../frontend/dist"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -103,8 +106,9 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"  # added this line
+STATICFILES_DIR = [  BASE_DIR / '../frontend/dist/assets',]
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 #CORS_ALLOWED_ORIGINS = [
