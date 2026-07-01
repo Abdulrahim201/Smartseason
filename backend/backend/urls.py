@@ -10,4 +10,8 @@ urlpatterns = [
     path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh"),
     path("api-auth/", include("rest_framework.urls")),
     path("api/", include("api.urls")),
+
+     # Catch-all: serve React for any other URL
+    path("", TemplateView.as_view(template_name="index.html")),
+    path("<path:path>", TemplateView.as_view(template_name="index.html")),
 ]
